@@ -146,9 +146,9 @@ def inserir_animal():
             (cpf, nome_t, sobrenome)
         )
 
-        data = input("Data cadastro YYYY-MM-DD: ")
+        data = input("Data cadastro tutor YYYY-MM-DD: ")
         data = validar_data(data)
-
+        print("Tutor adicionado.\nContinuendo cadastro do animal.")
         if not data:
             print("Data inválida.")
             return
@@ -158,7 +158,7 @@ def inserir_animal():
             (cpf, data)
         )
 
-    data = input("Data nascimento YYYY-MM-DD: ")
+    data = input("Data nascimento animal YYYY-MM-DD: ")
     data = validar_data(data)
 
     if not data:
