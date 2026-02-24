@@ -4,6 +4,11 @@ Este projeto é uma aplicação de linha de comando (CLI) desenvolvida em **Pyth
 
 O sistema foi desenhado para gerenciar as rotinas de uma clínica veterinária, manipulando entidades como Animais, Veterinários e Consultas, garantindo a integridade e a consistência dos dados.
 
+## 📂 Estrutura do Projeto
+
+* **/database**: Contém o arquivo `SCRIPT.sql` com a modelagem física (DDL), criação do schema `clinica` e carga inicial de dados (DML).
+* **root**: Arquivo `Código.py` contendo a lógica da aplicação, conexão com o driver `psycopg2` e interface com o usuário.
+
 ## 🚀 Tecnologias Utilizadas
 
 * **Linguagem:** Python 3.x
@@ -26,6 +31,7 @@ O sistema oferece um menu interativo com as seguintes operações conectadas dir
 
 ### Pré-requisitos
 * [Python 3.x](https://www.python.org/downloads/) instalado na máquina.
+* Biblioteca `psycopg2-binary` instalada (`pip install psycopg2-binary`).
 * Conexão com a internet (para acessar o banco na AWS).
 
 ### Passo a Passo
