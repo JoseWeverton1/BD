@@ -294,9 +294,18 @@ def deletar_animal():
     cursor = conex.cursor()
     try:
         id = input("ID animal: ")
-        cursor.execute("DELETE FROM clinica.animal WHERE id_chave=%s", (id,))
-        conex.commit()
-        print("Deletado com sucesso.")
+
+        cursor.execute(
+            "DELETE FROM clinica.animal WHERE id_chave=%s",
+            (id,)
+        )
+
+        if cursor.rowcount == 0:
+            print("Animal não encontrado.")
+        else:
+            conex.commit()
+            print("Deletado com sucesso.")
+
     except psycopg2.DatabaseError as erro:
         conex.rollback()
         print(f"\n[ERRO NO BANCO DE DADOS] Falha ao deletar: {erro}")
@@ -309,9 +318,18 @@ def deletar_veterinario():
     cursor = conex.cursor()
     try:
         crmv = input("CRMV: ")
-        cursor.execute("DELETE FROM clinica.veterinario WHERE crmv=%s", (crmv,))
-        conex.commit()
-        print("Deletado com sucesso.")
+
+        cursor.execute(
+            "DELETE FROM clinica.veterinario WHERE crmv=%s",
+            (crmv,)
+        )
+
+        if cursor.rowcount == 0:
+            print("Veterinário não encontrado.")
+        else:
+            conex.commit()
+            print("Deletado com sucesso.")
+
     except psycopg2.DatabaseError as erro:
         conex.rollback()
         print(f"\n[ERRO NO BANCO DE DADOS] Falha ao deletar: {erro}")
@@ -324,9 +342,18 @@ def deletar_consulta():
     cursor = conex.cursor()
     try:
         id = input("ID consulta: ")
-        cursor.execute("DELETE FROM clinica.consulta WHERE id_consulta=%s", (id,))
-        conex.commit()
-        print("Deletado com sucesso.")
+
+        cursor.execute(
+            "DELETE FROM clinica.consulta WHERE id_consulta=%s",
+            (id,)
+        )
+
+        if cursor.rowcount == 0:
+            print("Consulta não encontrada.")
+        else:
+            conex.commit()
+            print("Deletado com sucesso.")
+
     except psycopg2.DatabaseError as erro:
         conex.rollback()
         print(f"\n[ERRO NO BANCO DE DADOS] Falha ao deletar: {erro}")
